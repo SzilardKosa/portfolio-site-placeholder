@@ -1,0 +1,180 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#space {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* https://www.color-hex.com/color-palette/70273 */
+  background: #040c24;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  --img-flickering-time: 0.2s;
+}
+
+.spacer {
+  height: 20vh;
+}
+
+/* STARS */
+#stars {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#star1 {
+  top: 10vh;
+  left: 10vw;
+}
+
+#star2 {
+  top: 70vh;
+  left: 70vw;
+}
+
+#star3 {
+  top: 30vh;
+  left: 20vw;
+}
+
+#star4 {
+  top: 15vh;
+  left: 80vw;
+}
+
+#star5 {
+  top: 80vh;
+  left: 30vw;
+}
+
+#star6 {
+  top: 50vh;
+  left: 82vw;
+}
+
+#star7 {
+  top: 50vh;
+  left: 15vw;
+}
+
+#star8 {
+  top: 5vh;
+  left: 45vw;
+}
+
+#star9 {
+  top: 85vh;
+  left: 12vw;
+}
+
+.star {
+  position: absolute;
+}
+
+.star-img1 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.star-img2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation-delay: calc(var(--img-flickering-time) / 2);
+}
+
+.star-img1,
+.star-img2 {
+  filter: invert(1) opacity(0.8) drop-shadow(0 0 0.5rem white);
+  max-width: 10vw;
+  max-height: 10vh;
+  animation-name: flickering;
+  animation-duration: var(--img-flickering-time);
+  animation-timing-function: step-end;
+  animation-iteration-count: infinite;
+}
+
+/* ROTATING ME */
+#me {
+  position: relative;
+  top: 0;
+  left: 0;
+  animation-name: rotation;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.me-img1 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.me-img2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation-delay: calc(var(--img-flickering-time) / 2);
+}
+
+.me-img1,
+.me-img2 {
+  filter: invert(1) opacity(0.8) drop-shadow(0 0 0.5rem black);
+  max-width: 40vw;
+  max-height: 30vh;
+  animation-name: flickering;
+  animation-duration: var(--img-flickering-time);
+  animation-timing-function: step-end;
+  animation-iteration-count: infinite;
+}
+
+@keyframes flickering {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
