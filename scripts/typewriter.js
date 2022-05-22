@@ -2,12 +2,16 @@ const superSlowTypingDelay = 800
 const slowTypingDelay = 400
 const mediumTypingDelay = 200
 const fastTypingDelay = 100
+
 const normalDeletingDelay = 100
 const fastDeletingDelay = 50
+
 const typoEndDelay = 500
 const typoRestartDelay = 400
+
 const startPauseDelay = 1000
-const endPauseDelay = 2000
+const endPauseDelay = 2500
+
 const cursorElement = '<span aria-hidden="true"></span>'
 
 function randomDelay(milliseconds) {
@@ -100,25 +104,27 @@ async function introductionScenario(element) {
 
   // When I will have time to finish it...
   await delay(startPauseDelay)
-  await typeText(element, 'When I will have time to finish it...')
+  await typeText(element, 'When I will have time to finish it')
+  await typeText(element, '...', superSlowTypingDelay)
   await delay(endPauseDelay)
   await deleteAll(element)
 
   // But for now, it's just...
   await delay(startPauseDelay)
-  await typeText(element, "But for now, it's just..")
+  await typeText(element, "But for now, it's just")
+  await typeText(element, '...', slowTypingDelay)
   await delay(endPauseDelay)
   await deleteAll(element)
 
   // ...my space.
   await delay(startPauseDelay)
-  await typeText(element, '...my space.')
+  await typeText(element, '...my space.', slowTypingDelay)
   await delay(endPauseDelay)
   await deleteAll(element)
 
   // Get it?
   await delay(startPauseDelay)
-  await typeText(element, 'Get it?')
+  await typeText(element, 'Get it?', fastTypingDelay)
   await delay(endPauseDelay)
   await deleteAll(element)
 
@@ -130,18 +136,19 @@ async function introductionScenario(element) {
 
   // .....
   await delay(startPauseDelay)
-  await typeText(element, '.....')
+  await typeText(element, '.....', slowTypingDelay)
   await delay(endPauseDelay)
   await deleteAll(element)
 
-  // Because of the background looks just like Space and because this site is still lacking content, meaning it has a lot of empty space.
+  // Because the background looks just like Space and because this site is still lacking content meaning it has a lot of empty space.
   await delay(startPauseDelay)
   await typeText(
     element,
-    'Because of the background looks just like Space and because this site is still lacking content, meaning it has a lot of empty space.'
+    'Because the background looks just like Space and because this site is still lacking content meaning it has a lot of empty space.',
+    fastTypingDelay
   )
-  await delay(endPauseDelay)
-  await deleteAll(element)
+  await delay(endPauseDelay * 2)
+  await deleteAll(element, fastDeletingDelay)
 
   // Anyway.
   await delay(startPauseDelay)
@@ -173,10 +180,10 @@ async function introductionScenario(element) {
   await delay(endPauseDelay)
   await deleteAll(element)
 
-  // Gotcha!! You thought the text will loop huh?
+  // Gotcha!! You thought the text will loop, huh?
   await delay(startPauseDelay)
-  await typeText(element, 'Gotcha!! You thought the text will loop huh?')
-  await delay(endPauseDelay)
+  await typeText(element, 'Gotcha!! You thought the text will loop, huh?', fastTypingDelay)
+  await delay(endPauseDelay * 1.5)
   await deleteAll(element)
 
   // Well it won't!
@@ -199,13 +206,13 @@ async function introductionScenario(element) {
 
   // NO IT WON'T, I'M NOT DONE YET!
   await delay(startPauseDelay)
-  await typeText(element, "NO IT WON'T, I'M NOT DONE YET!")
-  await delay(endPauseDelay)
+  await typeText(element, "NO IT WON'T, I'M NOT DONE YET!", fastTypingDelay)
+  await delay(endPauseDelay * 1.5)
   await deleteAll(element)
 
   // MUHAHAHAHAHAHAHAHAHAHAAHAHAHAHAHAHAHAHAHAHA
   await delay(startPauseDelay)
-  await typeText(element, 'MUHAHAHAHAHAHAHAHAHAHAAHAHAHAHAHAHAHAHAHAHA')
+  await typeText(element, 'MUHAHAHAHAHAHAHAHAHAHAAHAHAHAHAHAHAHAHAHAHA', fastTypingDelay)
   await delay(endPauseDelay)
   await deleteAll(element)
 
@@ -233,6 +240,12 @@ async function introductionScenario(element) {
   await delay(endPauseDelay)
   await deleteAll(element)
 
+  // ...I will miss you too.
+  await delay(startPauseDelay)
+  await typeText(element, '...I will miss you too.')
+  await delay(endPauseDelay)
+  await deleteAll(element)
+
   // But hey, I will be here when you need me.
   await delay(startPauseDelay)
   await typeText(element, 'But hey, I will be here when you need me.')
@@ -245,22 +258,25 @@ async function introductionScenario(element) {
   await delay(endPauseDelay)
   await deleteAll(element)
 
-  // Although this text will be gone probably, when the site finishes..
+  // Although this text will be gone probably, when the site finishes...
   await delay(startPauseDelay)
-  await typeText(element, 'Although this text will be gone probably, when the site finishes.')
+  await typeText(element, 'Although this text will be gone probably, when the site finishes')
+  await typeText(element, '...', slowTypingDelay)
   await delay(endPauseDelay)
   await deleteAll(element)
 
-  // ..but till then..
+  // ...but till then...
   await delay(startPauseDelay)
-  await typeText(element, '..but till then..')
+  await typeText(element, '...but till then...', slowTypingDelay)
   await delay(endPauseDelay)
   await deleteAll(element)
 
-  // ..I will be here. :)
+  // ...I will be here. :)
   await delay(startPauseDelay)
-  await typeText(element, '.. I will be here. :)')
-  await delay(endPauseDelay)
+  await typeText(element, '...I will be here.', slowTypingDelay)
+  await delay(startPauseDelay)
+  await typeText(element, ' :)', superSlowTypingDelay)
+  await delay(endPauseDelay * 2)
   await deleteAll(element)
 }
 
