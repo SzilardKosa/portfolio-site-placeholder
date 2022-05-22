@@ -42,6 +42,7 @@ body {
 
 /* TYPEWRITER */
 #typewriter {
+  position: relative;
   width: 90vw;
   max-width: 40rem;
   min-height: 3rem;
