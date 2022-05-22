@@ -91,48 +91,48 @@ body {
 }
 
 #star1 {
-  top: 10vh;
-  left: 10vw;
+  top: 10%;
+  left: 10%;
 }
 
 #star2 {
-  top: 70vh;
-  left: 70vw;
+  top: 70%;
+  left: 70%;
 }
 
 #star3 {
-  top: 48vh;
-  left: 35vw;
+  top: 48%;
+  left: 35%;
 }
 
 #star4 {
-  top: 8vh;
-  left: 80vw;
+  top: 8%;
+  left: 80%;
 }
 
 #star5 {
-  top: 80vh;
-  left: 30vw;
+  top: 80%;
+  left: 30%;
 }
 
 #star6 {
-  top: 50vh;
-  left: 82vw;
+  top: 50%;
+  left: 82%;
 }
 
 #star7 {
-  top: 50vh;
-  left: 15vw;
+  top: 50%;
+  left: 15%;
 }
 
 #star8 {
-  top: 5vh;
-  left: 45vw;
+  top: 5%;
+  left: 45%;
 }
 
 #star9 {
-  top: 85vh;
-  left: 12vw;
+  top: 85%;
+  left: 12%;
 }
 
 .star {
