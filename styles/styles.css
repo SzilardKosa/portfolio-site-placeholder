@@ -23,6 +23,8 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  padding-top: 25vh;
+  padding-bottom: 15vh;
   /* https://www.color-hex.com/color-palette/70273 */
   background: #040c24;
   color: #ffffff;
@@ -35,7 +37,48 @@ body {
 }
 
 .spacer {
-  height: 20vh;
+  flex: 1;
+}
+
+/* TYPEWRITER */
+#typewriter {
+  position: relative;
+  width: 90vw;
+  max-width: 40rem;
+  min-height: 3rem;
+}
+
+#typewriter-content {
+  text-align: center;
+  word-wrap: break-word;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 500px) {
+  #typewriter-content {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #typewriter-content {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  #typewriter-content {
+    font-size: 2.2rem;
+  }
+}
+
+#typewriter-content span {
+  border-right: 0.2rem solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
 }
 
 /* STARS */
@@ -48,48 +91,48 @@ body {
 }
 
 #star1 {
-  top: 10vh;
-  left: 10vw;
+  top: 10%;
+  left: 10%;
 }
 
 #star2 {
-  top: 70vh;
-  left: 70vw;
+  top: 70%;
+  left: 70%;
 }
 
 #star3 {
-  top: 30vh;
-  left: 20vw;
+  top: 48%;
+  left: 35%;
 }
 
 #star4 {
-  top: 15vh;
-  left: 80vw;
+  top: 8%;
+  left: 80%;
 }
 
 #star5 {
-  top: 80vh;
-  left: 30vw;
+  top: 80%;
+  left: 30%;
 }
 
 #star6 {
-  top: 50vh;
-  left: 82vw;
+  top: 50%;
+  left: 82%;
 }
 
 #star7 {
-  top: 50vh;
-  left: 15vw;
+  top: 50%;
+  left: 15%;
 }
 
 #star8 {
-  top: 5vh;
-  left: 45vw;
+  top: 5%;
+  left: 45%;
 }
 
 #star9 {
-  top: 85vh;
-  left: 12vw;
+  top: 85%;
+  left: 12%;
 }
 
 .star {
@@ -111,9 +154,9 @@ body {
 
 .star-img1,
 .star-img2 {
-  filter: invert(1) opacity(0.8) drop-shadow(0 0 0.5rem white);
+  filter: invert(1) opacity(0.9) drop-shadow(0 0 0.5rem white);
   max-width: 10vw;
-  max-height: 10vh;
+  max-height: 8vh;
   animation-name: flickering;
   animation-duration: var(--img-flickering-time);
   animation-timing-function: step-end;
@@ -156,7 +199,8 @@ body {
 
 .me-img1,
 .me-img2 {
-  filter: invert(1) opacity(0.8) drop-shadow(0 0 0.5rem black);
+  filter: invert(73%) sepia(13%) saturate(451%) hue-rotate(187deg) brightness(89%) contrast(86%)
+    drop-shadow(0 0 0.5rem black);
   max-width: 40vw;
   max-height: 30vh;
   animation-name: flickering;
