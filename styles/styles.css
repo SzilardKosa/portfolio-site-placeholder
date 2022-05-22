@@ -23,6 +23,8 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  padding-top: 25vh;
+  padding-bottom: 15vh;
   /* https://www.color-hex.com/color-palette/70273 */
   background: #040c24;
   color: #ffffff;
@@ -35,7 +37,47 @@ body {
 }
 
 .spacer {
-  height: 20vh;
+  flex: 1;
+}
+
+/* TYPEWRITER */
+#typewriter {
+  width: 90vw;
+  max-width: 40rem;
+  min-height: 3rem;
+}
+
+#typewriter-content {
+  text-align: center;
+  word-wrap: break-word;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 500px) {
+  #typewriter-content {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #typewriter-content {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  #typewriter-content {
+    font-size: 2.2rem;
+  }
+}
+
+#typewriter-content span {
+  border-right: 0.2rem solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
 }
 
 /* STARS */
@@ -58,12 +100,12 @@ body {
 }
 
 #star3 {
-  top: 30vh;
-  left: 20vw;
+  top: 48vh;
+  left: 35vw;
 }
 
 #star4 {
-  top: 15vh;
+  top: 8vh;
   left: 80vw;
 }
 
@@ -113,7 +155,7 @@ body {
 .star-img2 {
   filter: invert(1) opacity(0.8) drop-shadow(0 0 0.5rem white);
   max-width: 10vw;
-  max-height: 10vh;
+  max-height: 8vh;
   animation-name: flickering;
   animation-duration: var(--img-flickering-time);
   animation-timing-function: step-end;
