@@ -35,7 +35,7 @@ body {
 
   --img-flickering-state: 0;
   animation-name: flickering;
-  animation-duration: 0.2s;
+  animation-duration: 0.4s;
   animation-timing-function: step-end;
   animation-iteration-count: infinite;
 }
@@ -158,21 +158,19 @@ body {
   position: relative;
   top: 0;
   left: 0;
-  opacity: var(--img-flickering-state);
 }
 
 .star-img2 {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: calc(1 - var(--img-flickering-state));
 }
 
 .star-img1,
 .star-img2 {
   filter: invert(1) opacity(0.9) drop-shadow(0 0 0.5rem white);
   max-width: 10vw;
-  max-height: 8vh;
+  max-height: 5vh;
 }
 
 /* ROTATING ME */
