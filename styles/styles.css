@@ -158,12 +158,14 @@ body {
   position: relative;
   top: 0;
   left: 0;
+  opacity: var(--img-flickering-state);
 }
 
 .star-img2 {
   position: absolute;
   top: 0;
   left: 0;
+  opacity: calc(1 - var(--img-flickering-state));
 }
 
 .star-img1,
