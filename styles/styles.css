@@ -35,7 +35,7 @@ body {
 
   --img-flickering-state: 0;
   animation-name: flickering;
-  animation-duration: 0.4s;
+  animation-duration: 0.2s;
   animation-timing-function: step-end;
   animation-iteration-count: infinite;
 }
