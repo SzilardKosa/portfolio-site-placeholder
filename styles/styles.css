@@ -15,6 +15,7 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  --flicker-mode: 0;
 }
 
 #space {
@@ -38,6 +39,11 @@ body {
   animation-duration: 0.2s;
   animation-timing-function: step-end;
   animation-iteration-count: infinite;
+
+  --opacity-img1: calc(
+    var(--img-flickering-state) * (1 - var(--flicker-mode)) + var(--flicker-mode)
+  );
+  --opacity-img2: calc((1 - var(--img-flickering-state)) * (1 - var(--flicker-mode)));
 }
 
 @keyframes flickering {
@@ -158,14 +164,14 @@ body {
   position: relative;
   top: 0;
   left: 0;
-  opacity: var(--img-flickering-state);
+  opacity: var(--opacity-img1);
 }
 
 .star-img2 {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: calc(1 - var(--img-flickering-state));
+  opacity: var(--opacity-img2);
 }
 
 .star-img1,
@@ -200,14 +206,14 @@ body {
   position: relative;
   top: 0;
   left: 0;
-  opacity: var(--img-flickering-state);
+  opacity: var(--opacity-img1);
 }
 
 .me-img2 {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: calc(1 - var(--img-flickering-state));
+  opacity: var(--opacity-img2);
 }
 
 .me-img1,
@@ -216,4 +222,51 @@ body {
     drop-shadow(0 0 0.5rem black);
   max-width: 40vw;
   max-height: 30vh;
+}
+
+/* FLICKER MODE BUTTON */
+#flicker-mode-cb {
+  display: none;
+}
+
+#flicker-mode-cb + #space {
+  --flicker-mode: 0;
+}
+
+#flicker-mode-cb:checked + #space {
+  --flicker-mode: 1;
+}
+
+#flicker-mode-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+}
+
+#flicker-mode-label {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.flicker-mode-off-img,
+.flicker-mode-on-img {
+  filter: invert(1) opacity(1) drop-shadow(0 0 0.5rem black);
+  width: 4rem;
+  height: 4rem;
+}
+
+.flicker-mode-off-img {
+  width: calc(4rem * (1 - var(--flicker-mode)));
+}
+.flicker-mode-on-img {
+  width: calc(4rem * (var(--flicker-mode)));
 }
