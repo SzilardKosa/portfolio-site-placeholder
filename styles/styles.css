@@ -190,6 +190,7 @@ body {
   animation-duration: 60s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  cursor: pointer;
 }
 
 @keyframes rotation {
@@ -202,22 +203,22 @@ body {
   }
 }
 
-.me-img1 {
+#me-img1 {
   position: relative;
   top: 0;
   left: 0;
   opacity: var(--opacity-img1);
 }
 
-.me-img2 {
+#me-img2 {
   position: absolute;
   top: 0;
   left: 0;
   opacity: var(--opacity-img2);
 }
 
-.me-img1,
-.me-img2 {
+#me-img1,
+#me-img2 {
   filter: invert(73%) sepia(13%) saturate(451%) hue-rotate(187deg) brightness(89%) contrast(86%)
     drop-shadow(0 0 0.5rem black);
   max-width: 40vw;
